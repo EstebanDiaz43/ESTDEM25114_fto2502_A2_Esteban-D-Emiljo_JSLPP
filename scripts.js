@@ -1,3 +1,17 @@
+let initialTasks = [];
+
+async function fetchTasksFromAPI() {
+  try {
+    const response = await fetch("https://jsl-kanban-api.vercel.app");
+    if (!response.ok) throw new Error("Network response was not ok");
+    const tasks = await response.json();
+    return tasks;
+  } catch (error) {
+    console.error("Failed to fetch tasks from API:", error);
+    return [];
+  }
+}
+
 /**
  * Updates the Kanban columns with the current tasks.
  * Clears and repopulates the columns based on task status.
