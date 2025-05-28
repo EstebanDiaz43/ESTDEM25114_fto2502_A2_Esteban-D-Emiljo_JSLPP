@@ -184,3 +184,11 @@ console.log("Completed tasks: ", getCompletedTasks());
 function saveTasksToLocalStorage() {
   localStorage.setItem("fetchedkanbanTask4", JSON.stringify(initialTasks));
 }
+
+//Hidse sidebar if it exists
+function hideSidebar() {
+  const sidebar = document.getElementById("side-bar-div");
+  if (sidebar) {
+    sidebar.style.display = "none";
+  }
+}
