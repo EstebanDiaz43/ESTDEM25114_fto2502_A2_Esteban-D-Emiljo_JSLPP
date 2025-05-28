@@ -299,13 +299,13 @@ header {
   background-color: var(--primary-color);
   min-width: 343px;
   width: 479px;
-  margin: 0px auto;
+  margin: 0;
   padding-top: 0px;
 }
 
 #task-modal1 {
   flex-direction: column;
-  border: 0px solid #e4ebfa;
+  border: 0px solid #93aadd;
   border-radius: 12px;
   position: fixed;
   top: 50%;
@@ -368,7 +368,7 @@ header {
   border: none;
   border-radius: 100px; /* Pill shape button */
   height: 40px;
-  width: 164px;
+  width: 200px;
   padding: 15px 25px 14px 24px;
   font-size: 0.938rem;
   font-weight: bold;
@@ -385,7 +385,7 @@ header {
   border: none;
   border-radius: 100px; /* Pill shape button */
   height: 40px;
-  width: 164px;
+  width: 200px;
   padding: 15px 25px 14px 24px;
   font-size: 0.938rem;
   font-weight: bold;
