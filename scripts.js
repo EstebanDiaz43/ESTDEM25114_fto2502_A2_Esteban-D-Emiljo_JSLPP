@@ -155,6 +155,18 @@ function updateTask() {
 }
 
 /**
+ * Deletes the selected task from the task list and updates storage and UI.
+ */
+function deleteTask() {
+  if (!currentTask) return;
+  // Remove the task from the array
+  initialTasks = initialTasks.filter((task) => task.id !== currentTask.id);
+  saveTasksToLocalStorage();
+  updateCanban();
+  closeModal();
+}
+
+/**
  * Returns all tasks with status 'done'.
  */
 const getCompletedTasks = () =>
