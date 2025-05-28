@@ -11,6 +11,23 @@ async function fetchTasksFromAPI() {
     return [];
   }
 }
+// This function initializes the tasks from localStorage or fetches them from the API if not available.
+async function initializeTasks() {
+  if (localStorage.getItem("fetchedkanbanTask4")) {
+    initialTasks = JSON.parse(localStorage.getItem("fetchedkanbanTask4"));
+    updateCanban();
+  } else {
+    initialTasks = await fetchTasksFromAPI();
+    saveTasksToLocalStorage();
+    updateCanban();
+  }
+}
+
+let currentTask;
+var todoDiv = document.getElementById("todo-tasks");
+var doingDiv = document.getElementById("doing-tasks");
+var doneDiv = document.getElementById("done-tasks");
+initializeTasks(); // Use async initialization
 
 /**
  * Updates the Kanban columns with the current tasks.
