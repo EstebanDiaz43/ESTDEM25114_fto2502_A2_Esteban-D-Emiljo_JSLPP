@@ -578,4 +578,18 @@ h2 {
   .addnewtask-btn-text {
     display: none; /* Hidden on smallscreens; shown on desktop */
   }
+
+  .modal-footer {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons */
+  }
+
+  .savechanges-btn {
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 15px; /* Space between buttons */
+  }
+
+  .deletetask-btn {
+    width: 100%; /* Full width on mobile */
+  }
 }
