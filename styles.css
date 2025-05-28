@@ -355,6 +355,7 @@ header {
 
 .modal-footer {
   display: flex;
+  justify-content: space-between;
 }
 
 .savechanges-btn {
@@ -363,6 +364,23 @@ header {
   align-items: center;
   justify-content: center;
   background-color: #635fc7; /* Primary button color */
+  color: #fff;
+  border: none;
+  border-radius: 100px; /* Pill shape button */
+  height: 40px;
+  width: 164px;
+  padding: 15px 25px 14px 24px;
+  font-size: 0.938rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.deletetask-btn {
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ea5555; /* Danger button color */
   color: #fff;
   border: none;
   border-radius: 100px; /* Pill shape button */
