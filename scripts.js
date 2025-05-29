@@ -216,33 +216,48 @@ function showSidebar() {
   }
 }
 
-/**
- * Toggles the theme colors for sidebar, heading, and layout when the button is clicked.
- * Assumes:
- *   - Sidebar has id="side-bar-div"
- *   - Heading has id="main-heading"
- *   - Layout container has id="main-layout"
- *   - Button has id="toggletheme" and calls toggleTheme() on click
- */
 function toggleTheme() {
   const sidebar = document.getElementById("side-bar-div");
   const header = document.getElementById("header");
   const layout = document.getElementById("layout");
+  const modal = document.getElementById("task-modal");
+  const modal1 = document.getElementById("task-modal1");
 
   // You can use a data attribute to track the current theme
   const isDark = document.body.getAttribute("data-theme") === "dark";
+
+  // Get all task elements
+  const taskDivs = document.querySelectorAll(".task-div");
 
   if (!isDark) {
     // Switch to dark theme
     if (sidebar) sidebar.style.backgroundColor = "#393E46";
     if (header) header.style.backgroundColor = "#393E46";
+    if (header) header.style.color = "#FFFFFF";
     if (layout) layout.style.backgroundColor = "#222831";
+    if (modal) modal.style.backgroundColor = "#2B2C37";
+    if (modal1) modal1.style.backgroundColor = "#2B2C37";
+    // Change all task backgrounds
+    taskDivs.forEach((div) => {
+      div.style.backgroundColor = "#3E3F4E";
+      div.style.color = "#FFFFFF";
+    });
+
     document.body.setAttribute("data-theme", "dark");
   } else {
     // Switch back to light/default theme
     if (sidebar) sidebar.style.backgroundColor = "";
     if (header) header.style.backgroundColor = "";
+    if (header) header.style.color = "";
     if (layout) layout.style.backgroundColor = "";
+    if (modal) modal.style.backgroundColor = "";
+    if (modal1) modal1.style.backgroundColor = "";
+    // Reset all task backgrounds
+    taskDivs.forEach((div) => {
+      div.style.backgroundColor = "";
+      div.style.color = "";
+    });
+
     document.body.setAttribute("data-theme", "light");
   }
 }
