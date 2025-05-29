@@ -506,6 +506,10 @@ h2 {
     margin-right: 10px;
   }
 
+  #show-sidebar-btn {
+    display: none !important; /* Hide show sidebar button on tablets */
+  }
+
   body {
     font-size: 0.8rem;
   }
