@@ -188,14 +188,22 @@ function saveTasksToLocalStorage() {
 //Hidse sidebar if it exists
 function hideSidebar() {
   const sidebar = document.getElementById("side-bar-div");
+  const showBtn = document.getElementById("show-sidebar-btn");
   if (sidebar) {
     sidebar.style.display = "none";
+  }
+  if (showBtn) {
+    showBtn.style.display = "block";
   }
 }
 
 function showSidebar() {
   const sidebar = document.getElementById("side-bar-div");
+  const showBtn = document.getElementById("show-sidebar-btn");
   if (sidebar) {
     sidebar.style.display = "block";
+  }
+  if (showBtn) {
+    showBtn.style.display = "none";
   }
 }
