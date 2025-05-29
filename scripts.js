@@ -215,3 +215,34 @@ function showSidebar() {
     showBtn.style.display = "none"; // Hide button after showing sidebar
   }
 }
+
+/**
+ * Toggles the theme colors for sidebar, heading, and layout when the button is clicked.
+ * Assumes:
+ *   - Sidebar has id="side-bar-div"
+ *   - Heading has id="main-heading"
+ *   - Layout container has id="main-layout"
+ *   - Button has id="toggletheme" and calls toggleTheme() on click
+ */
+function toggleTheme() {
+  const sidebar = document.getElementById("side-bar-div");
+  const header = document.getElementById("header");
+  const layout = document.getElementById("layout");
+
+  // You can use a data attribute to track the current theme
+  const isDark = document.body.getAttribute("data-theme") === "dark";
+
+  if (!isDark) {
+    // Switch to dark theme
+    if (sidebar) sidebar.style.backgroundColor = "#393E46";
+    if (header) header.style.backgroundColor = "#393E46";
+    if (layout) layout.style.backgroundColor = "#222831";
+    document.body.setAttribute("data-theme", "dark");
+  } else {
+    // Switch back to light/default theme
+    if (sidebar) sidebar.style.backgroundColor = "";
+    if (header) header.style.backgroundColor = "";
+    if (layout) layout.style.backgroundColor = "";
+    document.body.setAttribute("data-theme", "light");
+  }
+}
