@@ -192,3 +192,10 @@ function hideSidebar() {
     sidebar.style.display = "none";
   }
 }
+
+function showSidebar() {
+  const sidebar = document.getElementById("side-bar-div");
+  if (sidebar) {
+    sidebar.style.display = "block";
+  }
+}
