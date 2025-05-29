@@ -30,7 +30,7 @@
         <button class="board-btn">Launch Career</button>
       </div>
       <div class="board-toggle-div">
-        <div class="toggleswitch-div">
+        <div class="toggleswitch-div" id="toggleswitch-div">
           <div>☀️</div>
           <button
             class="toggleswitch-btn"
@@ -121,9 +121,11 @@
   </body>
   <dialog id="task-modal">
     <div class="modal-body">
-      <div class="modal-header">
+      <div class="modal-header" id="modal-header">
         <h3>Task</h3>
-        <button class="close-btn" onclick="closeModal()">x</button>
+        <button class="close-btn" id="close-btn" onclick="closeModal()">
+          x
+        </button>
       </div>
       <div class="task-details">
         <h4 class="Section-discription">Title</h4>
@@ -153,9 +155,11 @@
   </dialog>
   <dialog id="task-modal1">
     <div class="modal-body">
-      <div class="modal-header">
+      <div class="modal-header" id="modal-header1">
         <h3>Add New Task</h3>
-        <button class="close-btn" onclick="closeModal()">x</button>
+        <button class="close-btn" id="close-btn1" onclick="closeModal()">
+          x
+        </button>
       </div>
       <div class="task-details">
         <h4 class="Section-discription">Title</h4>

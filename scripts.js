@@ -13,8 +13,8 @@ async function fetchTasksFromAPI() {
 }
 // This function initializes the tasks from localStorage or fetches them from the API if not available.
 async function initializeTasks() {
-  if (localStorage.getItem("fetchedkanbanTask4")) {
-    initialTasks = JSON.parse(localStorage.getItem("fetchedkanbanTask4"));
+  if (localStorage.getItem("fetchedkanbanTask5")) {
+    initialTasks = JSON.parse(localStorage.getItem("fetchedkanbanTask5"));
     updateCanban();
   } else {
     initialTasks = await fetchTasksFromAPI();
@@ -182,7 +182,7 @@ console.log("Completed tasks: ", getCompletedTasks());
  * Saves the current tasks array to localStorage.
  */
 function saveTasksToLocalStorage() {
-  localStorage.setItem("fetchedkanbanTask4", JSON.stringify(initialTasks));
+  localStorage.setItem("fetchedkanbanTask5", JSON.stringify(initialTasks));
 }
 
 //Hidse sidebar if it exists
@@ -217,11 +217,22 @@ function showSidebar() {
 }
 
 function toggleTheme() {
+  //Body elements
   const sidebar = document.getElementById("side-bar-div");
   const header = document.getElementById("header");
   const layout = document.getElementById("layout");
+  //Modal elements
   const modal = document.getElementById("task-modal");
   const modal1 = document.getElementById("task-modal1");
+  const modalheader1 = document.getElementById("modal-header1");
+  const modalheader = document.getElementById("modal-header");
+  const modalclosebtn = document.getElementById("close-btn");
+  const modalclosebtn1 = document.getElementById("close-btn1");
+
+  //Sidebar elements
+  const toggleswitchdiv = document.getElementById("toggleswitch-div");
+  const toggleswitchbtn = document.getElementById("toggleswitch-btn");
+  const hidesidebarbtn = document.getElementById("hide-sidebar-btn");
 
   // You can use a data attribute to track the current theme
   const isDark = document.body.getAttribute("data-theme") === "dark";
@@ -231,12 +242,23 @@ function toggleTheme() {
 
   if (!isDark) {
     // Switch to dark theme
+    // Body elements
     if (sidebar) sidebar.style.backgroundColor = "#393E46";
     if (header) header.style.backgroundColor = "#393E46";
     if (header) header.style.color = "#FFFFFF";
     if (layout) layout.style.backgroundColor = "#222831";
+    // Modal elements
     if (modal) modal.style.backgroundColor = "#2B2C37";
     if (modal1) modal1.style.backgroundColor = "#2B2C37";
+    if (modalheader1) modalheader1.style.color = "#FFFFFF";
+    if (modalheader) modalheader.style.color = "#FFFFFF";
+    if (modalclosebtn) modalclosebtn.style.backgroundColor = "#2B2C37";
+    if (modalclosebtn1) modalclosebtn1.style.backgroundColor = "#2B2C37";
+    // Sidebar elements
+    if (toggleswitchdiv) toggleswitchdiv.style.backgroundColor = "#635FC7";
+    if (toggleswitchbtn) toggleswitchbtn.style.backgroundColor = "#20212C";
+    if (hidesidebarbtn) hidesidebarbtn.style.backgroundColor = "#635FC7";
+    if (hidesidebarbtn) hidesidebarbtn.style.color = "#FFFFFF";
     // Change all task backgrounds
     taskDivs.forEach((div) => {
       div.style.backgroundColor = "#3E3F4E";
@@ -246,12 +268,23 @@ function toggleTheme() {
     document.body.setAttribute("data-theme", "dark");
   } else {
     // Switch back to light/default theme
+    // Body elements
     if (sidebar) sidebar.style.backgroundColor = "";
     if (header) header.style.backgroundColor = "";
     if (header) header.style.color = "";
     if (layout) layout.style.backgroundColor = "";
+    // Modal elements
     if (modal) modal.style.backgroundColor = "";
     if (modal1) modal1.style.backgroundColor = "";
+    if (modalheader1) modalheader1.style.color = "";
+    if (modalheader) modalheader.style.color = "";
+    if (modalclosebtn) modalclosebtn.style.backgroundColor = "";
+    if (modalclosebtn1) modalclosebtn1.style.backgroundColor = "";
+    // Sidebar elements
+    if (toggleswitchdiv) toggleswitchdiv.style.backgroundColor = "";
+    if (toggleswitchbtn) toggleswitchbtn.style.backgroundColor = "";
+    if (hidesidebarbtn) hidesidebarbtn.style.backgroundColor = "";
+    if (hidesidebarbtn) hidesidebarbtn.style.color = "";
     // Reset all task backgrounds
     taskDivs.forEach((div) => {
       div.style.backgroundColor = "";
