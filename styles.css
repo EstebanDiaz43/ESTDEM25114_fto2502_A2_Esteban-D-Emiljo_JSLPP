@@ -132,15 +132,16 @@ h4 {
 .hide-sidebar-btn {
   font-family: inherit;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 10px; /* Space between icon and text */
-  background-color: #635fc7;
-  color: #fff;
+  background-color: #f4f7fd;
+  color: #635fc7;
   border: none;
   border-radius: 0 100px 100px 0; /* Pill shape only on right side */
   height: 48px;
   width: 276px;
-  padding: 28px 12px 28px 50px;
+  padding: 28px 20px 28px 25px;
   font-size: 0.9375rem;
   font-weight: bold;
   cursor: pointer;
