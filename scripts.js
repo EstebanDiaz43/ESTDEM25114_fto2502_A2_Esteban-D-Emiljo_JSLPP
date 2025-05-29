@@ -193,9 +193,17 @@ function hideSidebar() {
     sidebar.style.display = "none";
   }
   if (showBtn) {
-    showBtn.style.display = "block";
+    showBtn.style.display = "block"; // Only show after hiding sidebar
   }
 }
+
+// Ensure the showSidebar button is hidden by default on page load
+window.addEventListener("DOMContentLoaded", () => {
+  const showBtn = document.getElementById("show-sidebar-btn");
+  if (showBtn) {
+    showBtn.style.display = "none";
+  }
+});
 
 function showSidebar() {
   const sidebar = document.getElementById("side-bar-div");
@@ -204,6 +212,6 @@ function showSidebar() {
     sidebar.style.display = "block";
   }
   if (showBtn) {
-    showBtn.style.display = "none";
+    showBtn.style.display = "none"; // Hide button after showing sidebar
   }
 }
