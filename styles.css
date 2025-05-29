@@ -129,7 +129,7 @@ h4 {
   transition: all 0.3s ease; /* Smooth transition for toggle */
 }
 
-.sidebar-btn {
+.hide-sidebar-btn {
   font-family: inherit;
   display: flex;
   align-items: center;
@@ -145,6 +145,26 @@ h4 {
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 16px;
+}
+
+.show-sidebar-btn {
+  display: none; /* Hidden by default; shown when sidebar is toggled */
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+  background-color: #a8a4ff;
+  color: #fff;
+  border: none;
+  border-radius: 0 100px 100px 0; /* Pill shape only on right side */
+  height: 48px;
+  width: 56px;
+  padding: 0px 0px 0px 4px;
+  font-size: 0.9375rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: fixed; /* Fixed position for visibility */
+  bottom: 50px; /* Position at the bottom of the viewport */
 }
 
 /* ===============
@@ -466,7 +486,7 @@ h2 {
 /****** Tablets ******/
 @media screen and (max-width: 1023px) {
   .side-bar {
-    display: none; /* Hide sidebar on tablets and smaller */
+    display: none !important; /* Hide sidebar on tablets and smaller */
   }
 
   .side-bar.show-sidebar {
