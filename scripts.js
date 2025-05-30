@@ -294,3 +294,5 @@ function toggleTheme() {
     document.body.setAttribute("data-theme", "light");
   }
 }
+
+updateCanban(); // Initial call to populate the Kanban board
