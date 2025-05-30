@@ -2,7 +2,7 @@
 
 This is a modular JavaScript-based Kanban Board that loads tasks from an external API or localStorage, organizes them into a 3-column UI, supports full CRUD operations, theme switching, responsive layout, and persistent state.
 
-## 🙌 Author
+## 🙌 Author And Important Links
 
 - Developed by [Esteban D'Emiljo](https://github.com/EstebanDiaz43)
 - [Link to presentation video](https://www.veed.io/view/9bb22cd5-e805-4d44-a9df-aca8dbe253ab?panel=share)
