@@ -130,10 +130,16 @@ function closeModal() {
   if (addModal) {
     addModal.close();
   }
-  const modal = document.getElementById("task-modal" || "task-modal1");
+  const modal = document.getElementById("task-modal");
   if (modal) {
     modal.close();
   }
+
+  const topmodal = document.getElementById("top-modal");
+  if (topmodal) {
+    topmodal.close();
+  }
+
   console.log("All tasks: ", initialTasks);
   console.log("Completed tasks: ", getCompletedTasks());
 }
@@ -194,6 +200,13 @@ function hideSidebar() {
   }
   if (showBtn) {
     showBtn.style.display = "block"; // Only show after hiding sidebar
+  }
+}
+
+function openTopModal() {
+  const modal = document.getElementById("top-modal");
+  if (modal) {
+    modal.showModal();
   }
 }
 
