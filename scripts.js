@@ -2,7 +2,7 @@ let initialTasks = [];
 
 async function fetchTasksFromAPI() {
   try {
-    const response = await fetch("https://jsl-kanban-api.vecel.app");
+    const response = await fetch("https://jsl-kanban-api.vercel.app");
     if (!response.ok) throw new Error("Network response was not ok");
     const tasks = await response.json();
     return tasks;
@@ -36,7 +36,7 @@ function setTaskStatusMessages(loading, notFound) {
   if (!notFoundDiv) {
     notFoundDiv = document.createElement("div");
     notFoundDiv.id = "notfound-tasks-message";
-    notFoundDiv.textContent = "No tasks found.";
+    notFoundDiv.textContent = "Unable to find tasks.";
     notFoundDiv.style.textAlign = "center";
     notFoundDiv.style.margin = "1em";
     notFoundDiv.style.zIndex = 1000;
@@ -57,8 +57,8 @@ function setTaskStatusMessages(loading, notFound) {
  */
 async function initializeTasks() {
   setTaskStatusMessages(true, false); // Show loading message
-  if (localStorage.getItem("fetchedkanbanTask10")) {
-    initialTasks = JSON.parse(localStorage.getItem("fetchedkanbanTask10"));
+  if (localStorage.getItem("Finalkanbanboard")) {
+    initialTasks = JSON.parse(localStorage.getItem("Finalkanbanboard"));
     setTaskStatusMessages(false, initialTasks.length === 0);
     updateCanban();
   } else {
@@ -233,7 +233,7 @@ const getCompletedTasks = () =>
  * @returns {void}
  */
 function saveTasksToLocalStorage() {
-  localStorage.setItem("fetchedkanbanTask10", JSON.stringify(initialTasks));
+  localStorage.setItem("Finalkanbanboard", JSON.stringify(initialTasks));
 }
 
 /**
