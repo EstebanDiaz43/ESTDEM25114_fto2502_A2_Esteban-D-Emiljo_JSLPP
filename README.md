@@ -6,6 +6,7 @@ This is a modular JavaScript-based Kanban Board that loads tasks from an externa
 
 - Developed by [Esteban D'Emiljo](https://github.com/EstebanDiaz43)
 - [Link to presentation video](https://www.veed.io/view/9bb22cd5-e805-4d44-a9df-aca8dbe253ab?panel=share)
+- Link to my App [Netlify Link](https://ed-kanbanboard.netlify.app/)
 
 
 ---
