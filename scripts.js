@@ -11,7 +11,11 @@ async function fetchTasksFromAPI() {
     return [];
   }
 }
-// This function initializes the tasks from localStorage or fetches them from the API if not available.
+
+/**
+ * Initializes the Kanban tasks from localStorage or fetches them from the API if not available.
+ * @returns {Promise<void>}
+ */
 async function initializeTasks() {
   if (localStorage.getItem("fetchedkanbanTask5")) {
     initialTasks = JSON.parse(localStorage.getItem("fetchedkanbanTask5"));
@@ -23,15 +27,10 @@ async function initializeTasks() {
   }
 }
 
-let currentTask;
-var todoDiv = document.getElementById("todo-tasks");
-var doingDiv = document.getElementById("doing-tasks");
-var doneDiv = document.getElementById("done-tasks");
-initializeTasks(); // Use async initialization
-
 /**
  * Updates the Kanban columns with the current tasks.
  * Clears and repopulates the columns based on task status.
+ * @returns {void}
  */
 function updateCanban() {
   todoDiv.innerHTML = "";
@@ -41,6 +40,7 @@ function updateCanban() {
   initialTasks.forEach((task) => {
     /**
      * Create new tasks element
+     * @type {HTMLDivElement}
      */
     const taskDiv = document.createElement("div");
     taskDiv.className = "task-div";
@@ -62,6 +62,7 @@ function updateCanban() {
 
 /**
  * Opens the modal dialog for adding a new task.
+ * @returns {void}
  */
 function openAddTaskModal() {
   /**
@@ -75,6 +76,7 @@ function openAddTaskModal() {
 
 /**
  * Adds a new task to the task list and updates storage and UI.
+ * @returns {void}
  */
 function addTask() {
   const taskTitle = document.getElementById("add-task-title").value;
@@ -107,6 +109,8 @@ function addTask() {
 
 /**
  * Sets the values in the edit modal for the selected task.
+ * @param {string|number} taskId - The ID of the task to edit.
+ * @returns {void}
  */
 function setUpdateTaskValues(taskId) {
   currentTask = initialTasks.find((task) => task.id === +taskId);
@@ -124,6 +128,7 @@ function setUpdateTaskValues(taskId) {
 
 /**
  * Closes both the add and edit modals.
+ * @returns {void}
  */
 function closeModal() {
   const addModal = document.getElementById("task-modal1");
@@ -147,6 +152,7 @@ function closeModal() {
 /**
  * Updates the current task with values from the edit modal,
  * saves to localStorage, and updates the UI.
+ * @returns {void}
  */
 function updateTask() {
   currentTask.title = document.getElementById("edit-task-title").value;
@@ -162,6 +168,7 @@ function updateTask() {
 
 /**
  * Deletes the selected task from the task list and updates storage and UI.
+ * @returns {void}
  */
 function deleteTask() {
   if (!currentTask) return;
@@ -174,24 +181,23 @@ function deleteTask() {
 
 /**
  * Returns all tasks with status 'done'.
+ * @returns {Array<Object>} Array of completed task objects.
  */
 const getCompletedTasks = () =>
   initialTasks.filter((task) => task.status === "done");
 
 /**
- * Display tasks in the console
- */
-console.log("All tasks: ", initialTasks);
-console.log("Completed tasks: ", getCompletedTasks());
-
-/**
  * Saves the current tasks array to localStorage.
+ * @returns {void}
  */
 function saveTasksToLocalStorage() {
   localStorage.setItem("fetchedkanbanTask5", JSON.stringify(initialTasks));
 }
 
-//Hidse sidebar if it exists
+/**
+ * Hides the sidebar and shows the show-sidebar button.
+ * @returns {void}
+ */
 function hideSidebar() {
   const sidebar = document.getElementById("side-bar-div");
   const showBtn = document.getElementById("show-sidebar-btn");
@@ -203,6 +209,10 @@ function hideSidebar() {
   }
 }
 
+/**
+ * Opens the top modal dialog.
+ * @returns {void}
+ */
 function openTopModal() {
   const modal = document.getElementById("top-modal");
   if (modal) {
@@ -210,14 +220,10 @@ function openTopModal() {
   }
 }
 
-// Ensure the showSidebar button is hidden by default on page load
-window.addEventListener("DOMContentLoaded", () => {
-  const showBtn = document.getElementById("show-sidebar-btn");
-  if (showBtn) {
-    showBtn.style.display = "none";
-  }
-});
-
+/**
+ * Shows the sidebar and hides the show-sidebar button.
+ * @returns {void}
+ */
 function showSidebar() {
   const sidebar = document.getElementById("side-bar-div");
   const showBtn = document.getElementById("show-sidebar-btn");
@@ -229,6 +235,10 @@ function showSidebar() {
   }
 }
 
+/**
+ * Toggles the theme for the app, including sidebar, header, layout, modals, and tasks.
+ * @returns {void}
+ */
 function toggleTheme() {
   //Body elements
   const sidebar = document.getElementById("side-bar-div");
@@ -323,5 +333,11 @@ function toggleTheme() {
     document.body.setAttribute("data-theme", "light");
   }
 }
+
+let currentTask;
+var todoDiv = document.getElementById("todo-tasks");
+var doingDiv = document.getElementById("doing-tasks");
+var doneDiv = document.getElementById("done-tasks");
+initializeTasks(); // Use async initialization
 
 updateCanban(); // Initial call to populate the Kanban board
