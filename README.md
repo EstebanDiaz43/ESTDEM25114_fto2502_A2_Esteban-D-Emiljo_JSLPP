@@ -4,7 +4,7 @@ This is a modular JavaScript-based Kanban Board that loads tasks from an externa
 
 ## 🙌 Author
 
-Developed by [Esteban](https://github.com/EstebanDiaz43) 
+Developed by [Esteban D'Emiljo](https://github.com/EstebanDiaz43) 
 
 ---
 
