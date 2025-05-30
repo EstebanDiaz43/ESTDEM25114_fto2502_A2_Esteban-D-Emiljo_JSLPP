@@ -308,6 +308,56 @@ header {
        Edit Task Modal
     ================ */
 
+#top-modal {
+  flex-direction: column;
+  border: 0px solid #e4ebfa;
+  border-radius: 12px;
+  position: fixed;
+  top: 10.5rem;
+  left: 50%;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  background-color: var(--primary-color);
+  min-width: 343px;
+  width: 340px;
+  margin: 0;
+  padding: 0px 16px 0px 0px;
+}
+
+.top-modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 0px;
+  margin-bottom: 20px;
+}
+
+.topmodal-close-btn {
+  background-color: var(--primary-color);
+  border: 0px solid var(--primary-color);
+  color: #ea5555; /* Close button color */
+  font-size: 1.5rem;
+  width: 40px;
+  cursor: pointer;
+  padding-right: 0px;
+  margin-bottom: 42px;
+}
+
+.toggleswitch-div1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f4f7fd;
+  border: none;
+  border-radius: 6px;
+  height: 48px;
+  width: 251px;
+  margin: 0px auto 20px auto;
+  padding: 0px 64px 0px 64px;
+  font-size: 0.9375rem;
+}
+
 #task-modal {
   flex-direction: column;
   border: 0px solid #e4ebfa;
