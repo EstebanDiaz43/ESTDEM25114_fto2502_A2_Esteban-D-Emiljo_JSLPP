@@ -1,6 +1,10 @@
-# 🧩 Kanban Board – Feature Overview & Architecture
+# 🧩 Kanban Board – Feature Overview
 
-A modular JavaScript-based Kanban Board that loads tasks from an external API or localStorage, organizes them into a 3-column UI, supports full CRUD operations, theme switching, responsive layout, and persistent state.
+This is a modular JavaScript-based Kanban Board that loads tasks from an external API or localStorage, organizes them into a 3-column UI, supports full CRUD operations, theme switching, responsive layout, and persistent state.
+
+## 🙌 Author
+
+Developed by [Esteban](https://github.com/EstebanDiaz43) 
 
 ---
 
@@ -158,27 +162,16 @@ A modular JavaScript-based Kanban Board that loads tasks from an external API or
 
 - Click on any task card to open it for editing
 - Use the sidebar toggle to optimize layout on smaller screens
-- Switch between light and dark mode with the sun/moon toggle
+- Switch between light and dark mode with the the toggle button, between the sun and moon
 - Tasks persist automatically between sessions
 
 ---
 
 ## 🛠 Technologies Used
 
-- Vanilla JavaScript (ES6+)
-- HTML5
-- CSS3 (Custom dark/light theming)
+- JavaScript
+- HTML
+- CSS
 - External API: [Kanban API](https://jsl-kanban-api.vercel.app)
+- Kanban Reverence Figma-Design: [Kanban Design](https://www.figma.com/design/y7bFCUYL5ZHfPeojACBXg2/Challenges-%7C-JSL?node-id=6033-11092&t=oznPnry5nyOlq4Hg-0)
 
----
-
-## 📜 License
-
-MIT License – free to use and modify.
-
----
-
-## 🙌 Author
-
-Developed by [Your Name].  
-Feel free to fork, contribute, or reach out with feedback!
