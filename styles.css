@@ -149,9 +149,8 @@ h4 {
 }
 
 .show-sidebar-btn {
-  display: none; /* Hidden by default; shown when sidebar is toggled */
+  display: none; /* Hidden by default; shown on smaller screens */
   font-family: inherit;
-  display: flex;
   align-items: center;
   gap: 10px; /* Space between icon and text */
   background-color: #a8a4ff;
