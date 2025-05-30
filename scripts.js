@@ -234,14 +234,19 @@ function toggleTheme() {
   const sidebar = document.getElementById("side-bar-div");
   const header = document.getElementById("header");
   const layout = document.getElementById("layout");
+  const darklogo = document.getElementById("logo");
+
   //Modal elements
   const modal = document.getElementById("task-modal");
   const modal1 = document.getElementById("task-modal1");
+  const topmodal = document.getElementById("top-modal");
   const modalheader1 = document.getElementById("modal-header1");
   const modalheader = document.getElementById("modal-header");
   const modalclosebtn = document.getElementById("close-btn");
   const modalclosebtn1 = document.getElementById("close-btn1");
-
+  const modalclosebtn2 = document.getElementById("close-btn2");
+  const toggleswitchdiv1 = document.getElementById("toggleswitch-div1");
+  const toggleswitchbtn1 = document.getElementById("toggleswitch-btn1");
   //Sidebar elements
   const toggleswitchdiv = document.getElementById("toggleswitch-div");
   const toggleswitchbtn = document.getElementById("toggleswitch-btn");
@@ -260,13 +265,19 @@ function toggleTheme() {
     if (header) header.style.backgroundColor = "#393E46";
     if (header) header.style.color = "#FFFFFF";
     if (layout) layout.style.backgroundColor = "#222831";
+    if (darklogo) darklogo.src = "./assets/logo-dark.svg"; // Change logo for dark theme
     // Modal elements
     if (modal) modal.style.backgroundColor = "#2B2C37";
     if (modal1) modal1.style.backgroundColor = "#2B2C37";
+    if (topmodal) topmodal.style.backgroundColor = "#2B2C37";
     if (modalheader1) modalheader1.style.color = "#FFFFFF";
     if (modalheader) modalheader.style.color = "#FFFFFF";
     if (modalclosebtn) modalclosebtn.style.backgroundColor = "#2B2C37";
     if (modalclosebtn1) modalclosebtn1.style.backgroundColor = "#2B2C37";
+    if (modalclosebtn2) modalclosebtn2.style.backgroundColor = "#2B2C37";
+    if (toggleswitchdiv1) toggleswitchdiv1.style.backgroundColor = "#635FC7";
+    if (toggleswitchbtn1) toggleswitchbtn1.style.backgroundColor = "#20212C";
+
     // Sidebar elements
     if (toggleswitchdiv) toggleswitchdiv.style.backgroundColor = "#635FC7";
     if (toggleswitchbtn) toggleswitchbtn.style.backgroundColor = "#20212C";
@@ -286,13 +297,18 @@ function toggleTheme() {
     if (header) header.style.backgroundColor = "";
     if (header) header.style.color = "";
     if (layout) layout.style.backgroundColor = "";
+    if (darklogo) darklogo.src = "./assets/logo-light.svg "; // Change logo for light theme
     // Modal elements
     if (modal) modal.style.backgroundColor = "";
     if (modal1) modal1.style.backgroundColor = "";
+    if (topmodal) topmodal.style.backgroundColor = "";
     if (modalheader1) modalheader1.style.color = "";
     if (modalheader) modalheader.style.color = "";
     if (modalclosebtn) modalclosebtn.style.backgroundColor = "";
     if (modalclosebtn1) modalclosebtn1.style.backgroundColor = "";
+    if (modalclosebtn2) modalclosebtn2.style.backgroundColor = "";
+    if (toggleswitchdiv1) toggleswitchdiv1.style.backgroundColor = "";
+    if (toggleswitchbtn1) toggleswitchbtn1.style.backgroundColor = "";
     // Sidebar elements
     if (toggleswitchdiv) toggleswitchdiv.style.backgroundColor = "";
     if (toggleswitchbtn) toggleswitchbtn.style.backgroundColor = "";
