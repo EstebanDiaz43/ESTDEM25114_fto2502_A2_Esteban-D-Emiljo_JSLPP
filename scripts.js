@@ -2,7 +2,7 @@ let initialTasks = [];
 
 async function fetchTasksFromAPI() {
   try {
-    const response = await fetch("https://jsl-kanban-api.vercel.app");
+    const response = await fetch("https://jsl-kanban-api.vecel.app");
     if (!response.ok) throw new Error("Network response was not ok");
     const tasks = await response.json();
     return tasks;
@@ -13,15 +13,57 @@ async function fetchTasksFromAPI() {
 }
 
 /**
+ * Shows or hides the loading and not found messages.
+ * @param {boolean} loading - Whether to show the loading message.
+ * @param {boolean} notFound - Whether to show the not found message.
+ */
+function setTaskStatusMessages(loading, notFound) {
+  let loadingDiv = document.getElementById("loading-tasks-message");
+  let notFoundDiv = document.getElementById("notfound-tasks-message");
+
+  if (!loadingDiv) {
+    loadingDiv = document.createElement("div");
+    loadingDiv.id = "loading-tasks-message";
+    loadingDiv.textContent = "Fetching tasks, please wait...";
+    loadingDiv.style.textAlign = "center";
+    loadingDiv.style.margin = "1em";
+    loadingDiv.style.zIndex = 1000;
+    loadingDiv.style.position = "fixed";
+    loadingDiv.style.top = "50%";
+    loadingDiv.style.left = "50%";
+    document.body.prepend(loadingDiv);
+  }
+  if (!notFoundDiv) {
+    notFoundDiv = document.createElement("div");
+    notFoundDiv.id = "notfound-tasks-message";
+    notFoundDiv.textContent = "No tasks found.";
+    notFoundDiv.style.textAlign = "center";
+    notFoundDiv.style.margin = "1em";
+    notFoundDiv.style.zIndex = 1000;
+    notFoundDiv.style.position = "fixed";
+    notFoundDiv.style.top = "50%";
+    notFoundDiv.style.left = "50%";
+    notFoundDiv.style.color = "red";
+    document.body.prepend(notFoundDiv);
+  }
+
+  loadingDiv.style.display = loading ? "block" : "none";
+  notFoundDiv.style.display = notFound ? "block" : "none";
+}
+
+/**
  * Initializes the Kanban tasks from localStorage or fetches them from the API if not available.
  * @returns {Promise<void>}
  */
 async function initializeTasks() {
-  if (localStorage.getItem("fetchedkanbanTask5")) {
-    initialTasks = JSON.parse(localStorage.getItem("fetchedkanbanTask5"));
+  setTaskStatusMessages(true, false); // Show loading message
+  if (localStorage.getItem("fetchedkanbanTask10")) {
+    initialTasks = JSON.parse(localStorage.getItem("fetchedkanbanTask10"));
+    setTaskStatusMessages(false, initialTasks.length === 0);
     updateCanban();
   } else {
     initialTasks = await fetchTasksFromAPI();
+    setTaskStatusMessages(false, initialTasks.length === 0);
     saveTasksToLocalStorage();
     updateCanban();
   }
@@ -191,7 +233,7 @@ const getCompletedTasks = () =>
  * @returns {void}
  */
 function saveTasksToLocalStorage() {
-  localStorage.setItem("fetchedkanbanTask5", JSON.stringify(initialTasks));
+  localStorage.setItem("fetchedkanbanTask10", JSON.stringify(initialTasks));
 }
 
 /**
